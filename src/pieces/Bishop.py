@@ -2,4 +2,5 @@ from src.Piece import Piece
 
 
 class Bishop(Piece):
-    pass
+    def __init__(self) -> None:
+        super().__init__()

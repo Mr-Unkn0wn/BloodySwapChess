@@ -7,6 +7,9 @@ from src.Board import Board
 class Piece:
     position: Tuple[int, int]
 
+    def __init__(self) -> None:
+        pass # ToDo insert coordinates
+
     def generate_moves(self, board: Board) -> List[Tuple[int, int]]:
         pseudo_moves = self.generate_pseudo_legal_moves(board)
         moves = [move for move in pseudo_moves if self.is_legal_move(move, board)]
@@ -24,3 +27,10 @@ class Piece:
 
         # newBoard: apply move on board
         # board.is_valid
+
+    def getAsset(self) -> str:
+        """returns a string with the relative path to the piece asset
+        must be overwritten by the specifig piece to get the specific asset
+        """
+        
+        return "" 
