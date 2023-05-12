@@ -4,6 +4,10 @@ from src.Board import Board
 class Piece:
 
     position: (int, int)
+    white: bool
+
+    def draw_piece(self):
+        pass
 
     def generate_moves(self, board: Board) -> [(int, int)]:
         pseudo_moves = self.generate_pseudo_legal_moves(board)
