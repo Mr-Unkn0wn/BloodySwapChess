@@ -1,14 +1,11 @@
 # Example file showing a basic pygame "game loop"
 import pygame
 
+from src.Board import Board
 from src.pieces.TextureLoader import TextureLoader
 
-# pygame setup
-pygame.init()
-screen = pygame.display.set_mode((600, 600))
-clock = pygame.time.Clock()
 
-def draw_board(size_in_pixels):
+def draw_board(size_in_pixels, screen):
     for x in range(8):
         for y in range(8):
             count = x * 7 + y
@@ -20,9 +17,16 @@ def draw_board(size_in_pixels):
             pygame.draw.rect(screen, color, (size_in_pixels * x, size_in_pixels * y,
                                              size_in_pixels * (x + 1), size_in_pixels * (y + 1)))
 
+
 def main_loop():
+    # pygame setup
+    pygame.init()
+    screen = pygame.display.set_mode((600, 600))
+    clock = pygame.time.Clock()
     running = True
     loader = TextureLoader()
+    board = Board()
+
     while running:
         # poll for events
         # pygame.QUIT event means the user clicked X to close your window
@@ -34,7 +38,8 @@ def main_loop():
         screen.fill("gray")
 
         # RENDER YOUR GAME HERE
-        draw_board(75)
+        draw_board(75, screen)
+        board.draw_board(screen)
 
         # flip() the display to put your work on screen
         pygame.display.flip()
@@ -42,5 +47,6 @@ def main_loop():
         clock.tick(60)  # limits FPS to 60
 
     pygame.quit()
+
 
 main_loop()

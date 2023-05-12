@@ -1,3 +1,5 @@
+from pygame import Surface
+
 from src.Piece import Piece
 from typing import List
 import src.pieces as piece
@@ -27,6 +29,13 @@ class Board:
         board[0, 2] = piece.Bishop()
         board[7, 2] = piece.Bishop()
         
+
+    def draw_board(self, screen: Surface):
+        for row in self.board:
+            for element in row:
+                texture = element.get_asset()
+                screen.blit(texture)
+
 
 
     def is_valid(self) -> bool:
