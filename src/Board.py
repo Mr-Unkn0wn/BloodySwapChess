@@ -26,6 +26,14 @@ class Board:
 
         board[0, 2] = piece.Bishop()
         board[7, 2] = piece.Bishop()
+        board[0, 5] = piece.Bishop()
+        board[7, 5] = piece.Bishop()
+
+        board[7, 3] = piece.QUEEN()
+        board[0, 3] = piece.QUEEN()
+
+        board[7, 4] = piece.KING()
+        board[0, 4] = piece.KING()
         
 
 

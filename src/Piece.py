@@ -28,7 +28,7 @@ class Piece:
         # newBoard: apply move on board
         # board.is_valid
 
-    def getAsset() -> str:
+    def getAsset(self) -> str:
         """returns a string with the relative path to the piece asset
         must be overwritten by the specifig piece to get the specific asset
         """
