@@ -10,30 +10,30 @@ class Board:
         """
         ugly solution, might fix later
         """
-        board = [[None] * 8] * 8
+        self.board = [[None] * 8] * 8
         for i in range(8):
-            board[1, i] = piece.Pawn() # ToDo
-            board[6, i] = piece.Pawn()
-        board[0, 0] = piece.Rook()
-        board[7, 0] = piece.Rook()
-        board[0, 7] = piece.Rook()
-        board[7, 7] = piece.Rook()
+            self.board[1, i] = piece.Pawn() # ToDo
+            self.board[6, i] = piece.Pawn()
+        self.board[0, 0] = piece.Rook()
+        self.board[7, 0] = piece.Rook()
+        self.board[0, 7] = piece.Rook()
+        self.board[7, 7] = piece.Rook()
 
-        board[0, 1] = piece.Knight()
-        board[0, 6] = piece.Knight()
-        board[7, 1] = piece.Knight()
-        board[7, 6] = piece.Knight()
+        self.board[0, 1] = piece.Knight()
+        self.board[0, 6] = piece.Knight()
+        self.board[7, 1] = piece.Knight()
+        self.board[7, 6] = piece.Knight()
 
-        board[0, 2] = piece.Bishop()
-        board[7, 2] = piece.Bishop()
-        board[0, 5] = piece.Bishop()
-        board[7, 5] = piece.Bishop()
+        self.board[0, 2] = piece.Bishop()
+        self.board[7, 2] = piece.Bishop()
+        self.board[0, 5] = piece.Bishop()
+        self.board[7, 5] = piece.Bishop()
 
-        board[7, 3] = piece.QUEEN()
-        board[0, 3] = piece.QUEEN()
+        self.board[7, 3] = piece.QUEEN()
+        self.board[0, 3] = piece.QUEEN()
 
-        board[7, 4] = piece.KING()
-        board[0, 4] = piece.KING()
+        self.board[7, 4] = piece.KING()
+        self.board[0, 4] = piece.KING()
         
 
 
