@@ -1,10 +1,10 @@
 from src.Piece import Piece
+from src.pieces.TextureLoader import TextureLoader
 
 
 class Pawn(Piece):
+    def __init__(self) -> None:
+        super().__init__()
 
-    def draw_piece(self):
-        def __init__(self) -> None:
-            super().__init__()
-        # if self.white:
-
+    def getAsset(self, texture_loader: TextureLoader):
+        texture_loader.get_texture("pawn", self.white)

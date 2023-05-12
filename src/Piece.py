@@ -2,10 +2,12 @@ from typing import Tuple
 from typing import List
 
 from src.Board import Board
+from src.pieces.TextureLoader import TextureLoader
 
 
 class Piece:
     position: Tuple[int, int]
+    white: bool
 
     def __init__(self) -> None:
         pass # ToDo insert coordinates
@@ -28,7 +30,7 @@ class Piece:
         # newBoard: apply move on board
         # board.is_valid
 
-    def getAsset() -> str:
+    def getAsset(self, texture_loader: TextureLoader):
         """returns a string with the relative path to the piece asset
         must be overwritten by the specifig piece to get the specific asset
         """
