@@ -3,9 +3,23 @@ import pygame
 
 # pygame setup
 pygame.init()
-screen = pygame.display.set_mode((1280, 720))
+screen = pygame.display.set_mode((600, 600))
 clock = pygame.time.Clock()
 running = True
+
+
+def draw_board(size_in_pixels):
+    for x in range(8):
+        for y in range(8):
+            count = x * 7 + y
+
+            color = (13, 27, 42)
+            if count % 2 == 0:
+                color = (224, 225, 221)
+
+            pygame.draw.rect(screen, color, (size_in_pixels * x, size_in_pixels * y,
+                                             size_in_pixels * (x + 1), size_in_pixels * (y + 1)))
+
 
 while running:
     # poll for events
@@ -15,9 +29,10 @@ while running:
             running = False
 
     # fill the screen with a color to wipe away anything from last frame
-    screen.fill("purple")
+    screen.fill("gray")
 
     # RENDER YOUR GAME HERE
+    draw_board(75)
 
     # flip() the display to put your work on screen
     pygame.display.flip()
