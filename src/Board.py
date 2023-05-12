@@ -1,12 +1,12 @@
 from pygame import Surface
 
-from src.Piece import Piece
+import Piece as p
 from typing import List
-import src.pieces as piece
+import pieces as piece
 
 
 class Board:
-    board: List[Piece]  # 8x8 cells
+    board: List[p.Piece]  # 8x8 cells
 
     def __init__(self) -> None:
         """

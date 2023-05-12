@@ -1,5 +1,5 @@
-from src.Piece import Piece
-from src.pieces.TextureLoader import TextureLoader
+from Piece import Piece
+from TextureLoader import TextureLoader
 
 
 class Knight(Piece):

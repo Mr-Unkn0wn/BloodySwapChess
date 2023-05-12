@@ -1,8 +1,8 @@
 from typing import Tuple
 from typing import List
 
-import src.Board as b
-from src.pieces.TextureLoader import TextureLoader
+import Board as b
+from pieces.TextureLoader import TextureLoader
 
 
 class Piece:
