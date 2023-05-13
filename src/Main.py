@@ -39,7 +39,7 @@ def main_loop():
 
         # RENDER YOUR GAME HERE
         draw_board(75, screen)
-        board.draw_board(screen)
+        board.draw_board(screen, loader)
 
         # flip() the display to put your work on screen
         pygame.display.flip()

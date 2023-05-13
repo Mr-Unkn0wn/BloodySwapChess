@@ -4,7 +4,7 @@ import pygame
 class TextureLoader:
     def __init__(self):
         # self.texture_image = pygame.image.load('/home/mrunkn0wn/Documents/Code/BloodySwapChess/assets/pieces/spriteSheet.png').convert_alpha()
-        self.texture_image = pygame.image.load("assets/pieces/spriteSheet.png").convert_alpha()
+        self.texture_image = pygame.image.load("./assets/pieces/spriteSheet.png").convert_alpha()
         mask = pygame.mask.from_surface(self.texture_image)
         rects = mask.get_bounding_rects()
 

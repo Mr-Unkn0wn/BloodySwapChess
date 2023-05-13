@@ -1,11 +1,9 @@
-from Board import Piece
-from TextureLoader import TextureLoader
+from Piece import Piece
 
 
 class Queen(Piece):
-    def __init__(self) -> None:
-        super().__init__()
+    def __init__(self, position, white, jumpable) -> None:
+        super().__init__(position, white, jumpable)
 
-
-    def getAsset(self, texture_loader: TextureLoader):
-        texture_loader.get_texture("queen", self.white)
+    def get_name(self) -> str:
+        return "queen"
