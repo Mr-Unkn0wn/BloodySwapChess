@@ -1,7 +1,7 @@
 # Example file showing a basic pygame "game loop"
 import pygame
 
-import Board as b
+from Board import Board
 from pieces.TextureLoader import TextureLoader
 
 
@@ -25,7 +25,7 @@ def main_loop():
     clock = pygame.time.Clock()
     running = True
     loader = TextureLoader()
-    board = b.Board()
+    board = Board()
 
     while running:
         # poll for events

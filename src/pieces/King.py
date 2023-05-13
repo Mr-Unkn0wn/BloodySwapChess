@@ -1,4 +1,4 @@
-from Piece import Piece
+from Board import Piece
 from TextureLoader import TextureLoader
 
 

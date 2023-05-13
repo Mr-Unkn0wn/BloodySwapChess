@@ -1,12 +1,45 @@
 from pygame import Surface
 
-import Piece as p
 from typing import List
-import pieces as piece
+from typing import Tuple
+from pieces import Bishop, King, Knight, Pawn, Queen, Rook
+from pieces.TextureLoader import TextureLoader
 
+
+class Piece:
+    position: Tuple[int, int]
+    white: bool
+
+    def __init__(self) -> None:
+        pass # ToDo insert coordinates
+
+    def generate_moves(self, board) -> List[Tuple[int, int]]:
+        pseudo_moves = self.generate_pseudo_legal_moves(board)
+        moves = [move for move in pseudo_moves if self.is_legal_move(move, board)]
+        return moves
+
+    def generate_pseudo_legal_moves(self, board) -> List[Tuple[int, int]]:
+        pass
+
+    def is_legal_move(self, move_to: Tuple[int, int], board) -> bool:
+        x, y = move_to
+        if x < 0 or x > 7 or y < 0 or y > 7:
+            return False
+
+        return True
+
+        # newBoard: apply move on board
+        # board.is_valid
+
+    def getAsset(self, texture_loader: TextureLoader):
+        """returns a string with the relative path to the piece asset
+        must be overwritten by the specifig piece to get the specific asset
+        """
+        
+        return "" 
 
 class Board:
-    board: List[p.Piece]  # 8x8 cells
+    board: List[Piece]  # 8x8 cells
 
     def __init__(self) -> None:
         """
@@ -14,28 +47,28 @@ class Board:
         """
         self.board = [[None] * 8] * 8
         for i in range(8):
-            self.board[1, i] = piece.Pawn() # ToDo
-            self.board[6, i] = piece.Pawn()
-        self.board[0, 0] = piece.Rook()
-        self.board[7, 0] = piece.Rook()
-        self.board[0, 7] = piece.Rook()
-        self.board[7, 7] = piece.Rook()
+            self.board[1, i] = Pawn() # ToDo
+            self.board[6, i] = Pawn()
+        self.board[0, 0] = Rook()
+        self.board[7, 0] = Rook()
+        self.board[0, 7] = Rook()
+        self.board[7, 7] = Rook()
 
-        self.board[0, 1] = piece.Knight()
-        self.board[0, 6] = piece.Knight()
-        self.board[7, 1] = piece.Knight()
-        self.board[7, 6] = piece.Knight()
+        self.board[0, 1] = Knight()
+        self.board[0, 6] = Knight()
+        self.board[7, 1] = Knight()
+        self.board[7, 6] = Knight()
 
-        self.board[0, 2] = piece.Bishop()
-        self.board[7, 2] = piece.Bishop()
-        self.board[0, 5] = piece.Bishop()
-        self.board[7, 5] = piece.Bishop()
+        self.board[0, 2] = Bishop()
+        self.board[7, 2] = Bishop()
+        self.board[0, 5] = Bishop()
+        self.board[7, 5] = Bishop()
 
-        self.board[7, 3] = piece.QUEEN()
-        self.board[0, 3] = piece.QUEEN()
+        self.board[7, 3] = Queen()
+        self.board[0, 3] = Queen()
 
-        self.board[7, 4] = piece.KING()
-        self.board[0, 4] = piece.KING()
+        self.board[7, 4] = King()
+        self.board[0, 4] = King()
         
 
     def draw_board(self, screen: Surface):
@@ -48,3 +81,4 @@ class Board:
 
     def is_valid(self) -> bool:
         return False
+
