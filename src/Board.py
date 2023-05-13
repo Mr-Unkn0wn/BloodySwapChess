@@ -3,12 +3,12 @@ from typing import List, Tuple
 from pygame import Surface
 
 from Piece import Piece
-from pieces import Bishop, King, Knight, Pawn, Queen, Rook
+from pieces.pieces import Bishop, King, Knight, Pawn, Queen, Rook
 from pieces.TextureLoader import TextureLoader
 
 
 class Board:
-    board: List[Piece]  # 8x8 cells
+    board: List[List[Piece]]  # 8x8 cells
 
     def __init__(self) -> None:
         """
@@ -16,28 +16,28 @@ class Board:
         """
         self.board = [[None] * 8] * 8
         for i in range(8):
-            self.board[1][i] = Pawn.Pawn((1, i), True, False)
-            self.board[6][i] = Pawn.Pawn((6, i), False, False)
-        self.board[0][0] = Rook.Rook((0, 0), True, False)
-        self.board[7][0] = Rook.Rook((7, 0), False, False)
-        self.board[0][7] = Rook.Rook((0, 7), True, False)
-        self.board[7][7] = Rook.Rook((7, 7), False, False)
+            self.board[1][i] = Pawn((1, i), True, False)
+            self.board[6][i] = Pawn((6, i), False, False)
+        self.board[0][0] = Rook((0, 0), True, False)
+        self.board[7][0] = Rook((7, 0), False, False)
+        self.board[0][7] = Rook((0, 7), True, False)
+        self.board[7][7] = Rook((7, 7), False, False)
 
-        self.board[0][1] = Knight.Knight((0, 1), True, True)
-        self.board[0][6] = Knight.Knight((0, 6), True, True)
-        self.board[7][1] = Knight.Knight((7, 1), False, True)
-        self.board[7][6] = Knight.Knight((7, 6), False, True)
+        self.board[0][1] = Knight((0, 1), True, True)
+        self.board[0][6] = Knight((0, 6), True, True)
+        self.board[7][1] = Knight((7, 1), False, True)
+        self.board[7][6] = Knight((7, 6), False, True)
 
-        self.board[0][2] = Bishop.Bishop((0, 2), True, False)
-        self.board[7][2] = Bishop.Bishop((7, 2), False, False)
-        self.board[0][5] = Bishop.Bishop((0, 5), True, False)
-        self.board[7][5] = Bishop.Bishop((7, 5), False, False)
+        self.board[0][2] = Bishop((0, 2), True, False)
+        self.board[7][2] = Bishop((7, 2), False, False)
+        self.board[0][5] = Bishop((0, 5), True, False)
+        self.board[7][5] = Bishop((7, 5), False, False)
 
-        self.board[7][3] = Queen.Queen((7, 3), False, False)
-        self.board[0][3] = Queen.Queen((0, 3), True, False)
+        self.board[7][3] = Queen((7, 3), False, False)
+        self.board[0][3] = Queen((0, 3), True, False)
 
-        self.board[7][4] = King.King((7, 4), False, False)
-        self.board[0][4] = King.King((0, 4), True, False)
+        self.board[7][4] = King((7, 4), False, False)
+        self.board[0][4] = King((0, 4), True, False)
         
 
     def draw_board(self, screen: Surface, loader: TextureLoader):
