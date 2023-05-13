@@ -5,10 +5,6 @@ class Piece:
     """Definiert eine Figur
     Definiert Bewegungsmuster in abhängigkeit der Position und ob die Figur über andere Figuren springen kann
     """
-    position: Tuple[int, int]
-    white: bool
-    jumpable: bool # for knight to calc possible moves
-
     def __init__(self, position: Tuple[int, int], white: bool, jumpable: bool):
         self.position = position
         self.white = white
