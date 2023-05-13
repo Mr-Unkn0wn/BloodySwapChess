@@ -1,5 +1,5 @@
-from typing import List, Tuple
-
+from typing import Tuple
+from typing import List
 
 class Piece:
     """Definiert eine Figur
