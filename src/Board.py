@@ -1,12 +1,10 @@
+from typing import List, Tuple
+
 from pygame import Surface
 
-from typing import List
-from typing import Tuple
-from pieces import Bishop, King, Knight, Pawn, Queen, Rook
 from Piece import Piece
+from pieces import Bishop, King, Knight, Pawn, Queen, Rook
 from pieces.TextureLoader import TextureLoader
-
-
 
 
 class Board:
